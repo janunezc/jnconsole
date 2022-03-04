@@ -1,0 +1,37 @@
+{
+  "name": "jnconsole",
+  "version": "0.0.1",
+  "description": "Expand javascript console functionality by adding timestamps, elapsed time, grouping and colors",
+  "main": "jnconsole.js",
+  "scripts": {
+    "test": "nyc --reporter=text --reporter=html mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janunezc/jnconsole.git"
+  },
+  "keywords": [
+    "Expand",
+    "javascript",
+    "console",
+    "replace",
+    "timestamps",
+    "elapsed",
+    "time",
+    "grouping",
+    "colors"
+  ],
+  "author": "janunezc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janunezc/jnconsole/issues"
+  },
+  "homepage": "https://github.com/janunezc/jnconsole#readme",
+  "dependencies": {
+    "assert": "^2.0.0"
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0",
+    "mocha": "^8.2.1"
+  }
+}
