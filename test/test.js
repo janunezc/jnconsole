@@ -1,13 +1,14 @@
 const assert = require("assert");
 
 describe("Basic Test for jnconsole",()=>{
-  it("Should respond correctly to basic use",()=>{
+  it("Should take less than 4ms",()=>{
+    const jnc = require("../jnconsole");
     let start = Date.now();
     console.log("Dummy test waiting for 3ms");
     sleep(3)
     let end = Date.now();
     let elapsed = end-start;
-    assert.equal(elapsed,3);
+    assert.equal(elapsed <=4, true, "LESS  THAN 4 ms");
     console.log("Dummy Test did run!");
   });
 });
@@ -46,6 +47,9 @@ describe("Console replacement", ()=>{
 
     console.log({uno:1,dos:2,tres:3});
     console.log("LAST MESSAGE WAS:", console.lastMessage);
+
+    console.info("THIS IS AN NON WRAPPED INFO MESSAGE");
+    console.info("LAST MESSAGE WAS:", console.lastMessage );
 
   });
 });

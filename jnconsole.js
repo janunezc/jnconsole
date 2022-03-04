@@ -25,11 +25,20 @@
       oldConsole.error("***ERROR!!!",now, (now - console.error_lts),"ms", ...arguments);
       console.lastMessage = arguments[0];
       console.error_lts = now;
-    }
+    },
+    assert: oldConsole.assert,
+    clear: oldConsole.clear,
+    count: oldConsole.count,
+    group: oldConsole.group,
+    groupCollapsed: oldConsole.groupCollapsed,
+    groupEnd: oldConsole.groupEnd,
+    info: oldConsole.info,
+    table: oldConsole.table,
+    time: oldConsole.time,
+    timeEnd: oldConsole.timeEnd,
+    trace: oldConsole.trace
   }
 
-  console.log("Hello World! This someday will be a great project. Just stay tuned!");
+  console.log("Console has been hijacked by jnconsole. For good :-)");
 
-  exports.cuatro = 4;
-  exports.LastMessage = console.lastMessage;
 })();
