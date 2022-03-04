@@ -17,7 +17,7 @@ describe("Console replacement", ()=>{
   it("Should replace console successfully", ()=>{
     const jnc = require("../jnconsole");
     let logMessage = "This is a test for the overtaken console.log";
-    console.log(logMessage);
+    console.log(logMessage,1);
     assert.equal(console.lastMessage,logMessage);
     sleep(2);
 
@@ -25,7 +25,7 @@ describe("Console replacement", ()=>{
     console.log(logMessage);
     assert.equal(console.lastMessage,logMessage);
     sleep(2);
-    
+
     let warnMessage = "This is a test for the overtaken console.warn";
     console.warn(warnMessage);
     assert.equal(console.lastMessage,warnMessage);
@@ -43,6 +43,9 @@ describe("Console replacement", ()=>{
     errorMessage = "This is a test for the overtaken console.error after 3ms";
     console.error(errorMessage);
     assert.equal(console.lastMessage, errorMessage);
+
+    console.log({uno:1,dos:2,tres:3});
+    console.log("LAST MESSAGE WAS:", console.lastMessage);
 
   });
 });
