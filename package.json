@@ -1,6 +1,6 @@
 {
   "name": "jnconsole",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Expand javascript console functionality by adding timestamps, elapsed time, grouping and colors",
   "main": "jnconsole.js",
   "scripts": {
