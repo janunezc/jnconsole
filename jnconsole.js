@@ -26,6 +26,7 @@
       console.lastMessage = arguments[0];
       console.error_lts = now;
     },
+    /*REDIRECTORS TO REAL CONSOLE*/
     assert: oldConsole.assert,
     clear: oldConsole.clear,
     count: oldConsole.count,
