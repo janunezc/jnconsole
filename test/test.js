@@ -8,21 +8,21 @@ describe("Basic Test for jnconsole",()=>{
     sleep(3)
     let end = Date.now();
     let elapsed = end-start;
-    assert.equal(elapsed <=4, true, "LESS  THAN 4 ms");
+    assert.equal(elapsed <=5, true, "LESS  THAN 4 ms");
     console.log("Dummy Test did run!");
   });
 });
 
 
-describe("Console replacement", ()=>{
+describe("Console take-over", ()=>{
   it("Should replace console successfully", ()=>{
     const jnc = require("../jnconsole");
     let logMessage = "This is a test for the overtaken console.log";
     console.log(logMessage,1);
     assert.equal(console.lastMessage,logMessage);
-    sleep(2);
+    sleep(20);
 
-    logMessage = "This is a test for the overtaken console.log after 2ms";
+    logMessage = "This is a test for the overtaken console.log after 20ms";
     console.log(logMessage);
     assert.equal(console.lastMessage,logMessage);
     sleep(2);
@@ -54,6 +54,16 @@ describe("Console replacement", ()=>{
   });
 });
 
+
+describe("Console Give up", () => {
+  it("Should give up the console successfully", ()=>{
+    const jnc = require("../jnconsole");
+    jnc.JNConsole.giveConsoleUp();
+    console.log("This should be normal console");
+    jnc.JNConsole.takeConsoleOver();
+    console.log("This should be a jnconsole entry");
+  });
+});
 function sleep(delay) {
   const start = new Date().getTime();
   while (new Date().getTime() < start + delay);
